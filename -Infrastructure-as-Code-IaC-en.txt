@@ -1,0 +1,129 @@
+Welcome to Infrastructure as Code.
+After watching this video, you will be able to
+explain what Infrastructure as Code is,
+describe the benefits of IaC,
+and describe the various tools of IaC.
+Let’s discuss what we mean by Infrastructure as Code, or IaC.
+It provides a great way for you to describe your infrastructure in a textual format.
+But I'm not referring to a word processing document.
+We’re talking about a textual file format that you could actually use to configure your
+systems much like code.
+We’re talking about textual code that you can hand to an IaC tool.
+That tool reads the code and then builds your servers, and networks, and storage, etc.—essentially
+the core infrastructure elements that you need.
+Using these tools with this textual code means that everyone gets the same environment every
+time, so it’s consistent and repeatable.
+Textual code is normally written in the YAML format, which is a very common way to write
+and declare IaC.
+So, why are we discussing Infrastructure as Code in this course?
+Well, performing these system configurations manually is error-prone, not to mention, time-consuming.
+You can use templates or commands to describe how to install and configure the system
+according to your needs, how much storage you want, how much processing power you want,
+and so on.
+In the early days of DevOps, Configuration Management Systems (or CMSs) made this possible,
+and they predated the newer IaC tools, so they were all you had to perform tasks with.
+We’ll discuss CMSs in more detail later.
+Due to repeatable configuration, you can rapidly provision the same platform over and over
+again and be sure that it will be in the same state every time.
+Infrastructure as code tools can be either declarative or imperative.
+With the declarative approach, you specify the desired state of the infrastructure resources
+you want to provision,
+and then the IaC tool determines how to achieve this state.
+It handles dependencies and executes commands in the proper order without you having to
+specify the order of execution.
+Tools that use this approach include Terraform, Puppet, SaltStack, CloudFormation, and to
+some extent, Ansible.
+The imperative approach, in contrast, requires that you define the specific order of the
+commands needed to achieve the desired state.
+It’s up to you to get the dependencies correct as the tool will execute commands in the order
+you specify.
+Tools like Chef are imperative and to some extent, Ansible can be as well.
+Let’s take a look at how Ansible uses inventory files, and VAR files, to see how they work
+as an IaC tool.
+Here, we are using Ansible playbooks as an illustrative example, but the process is essentially
+the same with other IaC tools.
+Chef has cookbooks and recipes, Ansible has Playbooks and Plays.
+They are essentially the same thing.
+Inventory files have a list of servers or devices that can be in the form of IP addresses
+or hostnames.
+They can also specify groupings of servers like all of the web servers or all of the
+database servers.
+This is how Ansible knows what to operate on.
+There are also VAR files contain the relevant variables that may be needed whenever a playbook
+is run on a device or group of devices.
+You can control how Ansible interacts with remote hosts or devices based on how you define
+variables.
+The inventory files make up the most basic building block of Ansible architecture.
+You must reference the inventory files when executing Ansible or an Ansible playbook.
+So, Ansible has this notion of a playbook that contains any number of plays.
+Plays contain the instructions to be carried out on each server or device.
+Plays can also be targeted at specific groups of servers, like all of the web servers or
+all of the database servers.
+So a playbook is a collection reusable plays that are instructions that you give to Ansible
+to carry out.
+Ansible will read the playbook, determine which servers from the inventory that the
+plays are appropriate for, and execute the plays on each of these servers.
+So you could determine that you need to set up a web server, an app server, and a database
+server, or maybe two web servers, and three app servers, or maybe even change the existing
+configuration of a server.
+Whatever you need to do, Ansible will make all of the necessary configuration changes
+and provision all the things you need for your infrastructure.
+It's also important to note that Ansible is idempotent.
+It will not affect a server if it is already in the desired state.
+This allows you to be able to reapply a playbook and not worry about it installing things twice.
+Ansible will take care not to do that if it isn't needed.
+So, what are the benefits of using IaC?
+IaC automation dramatically speeds up the process of provisioning infrastructure for
+development, tests, and production (and for scaling or taking down production infrastructure
+as needed).
+It can even automate the provisioning of legacy infrastructure, which might otherwise be governed
+by time-consuming processes like requiring you to open a ticket and waiting for someone
+to manually do it.
+Developers can quickly provision sandboxes and Continuous Integration/Continuous Delivery
+environments, and QA can quickly provide full-fidelity test environments.
+IaC ensures that provisioning intelligence always remains with the organization.
+In the past, the knowledge of how to configure servers may have been known by only a few
+people in your organization.
+Once you codify this knowledge using infrastructure as code, everyone is able to provision what
+they need,
+and the fear of losing tribal knowledge through staff churn is no longer an issue.
+Finally, IaC lets organizations take maximum advantage of cloud computing's consumption-based
+cost structure.
+It reduces the time, effort, and specialized skill required to provision and scale infrastructure.
+It also enables developers to spend less time on plumbing and more time on mission-critical
+software solutions.
+Now, let’s briefly discuss some of the main IaC tools available.
+Terraform is an IaC tool by Hashi Corp that is free and open source.
+It uses a declarative approach to IaC with a pre-execution check to ensure that it will
+do what you expect it to do.
+You can use Terraform as a base tool in combination with Ansible where Terraform provisions the
+base infrastructure and Ansible configures the software on top of it.
+It is a very popular tool for cloud provisioning.
+Ansible is an open source tool that automates IT tools such as intra-service orchestration,
+application deployment, cloud provisioning, and more.
+It uses familiar YAML files to describe the state that you want to achieve.
+Ansible is simple to set up because it doesn't require any client-side agents or bespoke
+security infrastructure, and it works by simply delivering modules to clients.
+This makes it ideal for memory-constrained environments like configuring Internet of
+Things devices.
+These modules are run on the client side and the results are sent back to the Ansible server.
+Chef describes the necessary steps to reach a final state rather than describing the state
+itself.
+Using “Cookbooks,” you can describe various processes by which you can configure a system
+to achieve the desired state.
+One of the strengths of Chef is that it’s a popular tool and has lots of support but
+one of the drawbacks is that cookbooks are written in Ruby so you need to have Ruby skills
+on your team.
+With Puppet, you can use any existing platform.
+The main difference between Puppet and Chef is that Puppet is declarative, which some
+consider to be a preferred method.
+SaltStack’s remote execution capabilities allow administrators to run commands on various
+machines in parallel with a flexible targeting system.
+SaltStack is designed to allow users to explicitly target and issue commands to multiple machines
+directly.
+In this video, you learned that
+Configuration Management Systems were really the only tools available to configure infrastructure
+systems before IaC tools became available,
+IaC tools can dramatically speed up the process of provisioning your development environment’s
+infrastructure,
+and there are several different flavors of IaC tools available.

@@ -1,0 +1,82 @@
+Welcome to ‘What Is CI/CD?’
+After watching this video, you will be able to:
+Explain what Continuous Integration and Continuous Delivery are,
+describe the key differences between Continuous Integration and Continuous Delivery,
+and explain the main benefits of CI/CD.
+It’s important to understand the difference between Continuous Integration and Continuous
+Delivery,
+because a lot of times, people say ‘CI/CD’ like it's one process, but it's not.
+It’s two separate and distinct processes that happen right after each other.
+Continuous Integration is continuously integrating your code back into the main or master or
+trunk branch,
+so it shouldn't diverge too far before you merge changes back into the main branch to
+make sure that it works.
+You are continuously integrating your code with the main codebase.
+Whereas Continuous Delivery is then taking that integrated code and deploying it somewhere.
+You may deploy it every time you integrate it, or you may not deploy it every time you
+integrate it.
+You may have Continuous Integration on one loop testing branches and pull requests.
+And then, when you finally merge to main, you kick off the Continuous Delivery part.
+To define Continuous Integration, we say that CI is an automation process that allows you
+to integrate your work into your repository.
+You can also work as a team for the development of your application,
+and you can easily identify bugs and errors in your application very quickly.
+Your team can work in small chunks in different areas of your application and then easily
+and regularly merge the code into the main branch.
+Continuous Delivery is the next phase after Continuous Integration.
+It prepares the code for the release of your application,
+and automates the process that is required to deploy and build your application.
+Continuous Integration and Continuous Delivery are broken into several distinct phases.
+Continuous Integration consists of the Plan, Code, Build, and Test phases.
+This is where developers plan and then code the solution, and then build it and test it
+in several repeating cycles until it’s complete.
+And then the solution is ready to be delivered.
+While Continuous Delivery is made up of Release, Deploy, and Operate phases,
+where the solution is released, and the binaries are deployed into a given environment in repeating
+cycles, and the solution is then in live operation from that point on.
+It’s important to differentiate them as we discuss CI/CD because they are two very
+distinct processes that cover very different phases.
+There’s also a third concept called Continuous Deployment, which should maybe be called Continuous
+Release or something to make it less confusing because of the existing CI/CD terminology.
+The difference is subtle and so when someone says ‘Continuous Delivery’, you usually
+know what they mean.
+But when someone says ‘Continuous Deployment’, you have to ask them, do you really mean ‘deploying
+to production?’
+Because that's what most people think of when you use the term continuous deployment.
+To avoid confusion, remember that ‘Continuous Delivery’ is when you deploy it somewhere,
+like a development server, a staging server, a test server, or a pre-production server,
+whereas ‘Continuous Deployment’ is reserved for when you actually continuously push to
+production.
+So, you'll hear these two terms, ‘Continuous Delivery’ and ‘Continuous Deployment,’
+and it’s important to understand that they don’t mean the same thing.
+‘Continuous Delivery’ is delivering it somewhere other than production, and ‘Continuous
+Deployment’ is delivering it to production.
+It’s also important to understand where CI/CD sits in terms of the DevOps pipeline.
+The DevOps pipeline consists of Plan, Develop, Build, Test, and Deploy phases,
+and so, when we talk about CI/CD, we're in the Build and Test phases of the DevOps pipeline.
+There are several key benefits to CI/CD.
+The first benefit is that you’ll get faster reaction times to code changes.
+You’re no longer waiting to see the effects of a change.
+It automatically gets built and tested and deployed.
+You’ll also get the benefit of reduced code integration risk.
+The more often you integrate, the less time there is for change.
+So, integrating more often means less risk of something breaking.
+Another benefit is that you get higher code quality with CI/CD, because things are constantly
+being reviewed and constantly being tested,
+and every pull request is an opportunity for a code review.
+You also know the code in version control works.
+It’s a common practice to ensure that the code in the main or master branch is always
+deployable.
+And lastly, CI/CD takes less deployment time because everything is already tested, and
+deployments are automated, so they happen faster with greater repeatability.
+In this video, you learned that:
+CI/CD is not one process, it’s two separate and distinct processes that happen sequentially
+Continuous Integration is an automation process that allows developers to continuously integrate
+their code back into the main or master branch,
+Continuous Delivery is the next phase after CI, that takes integrated code and deploys
+it somewhere like a staging, testing, or preproduction server,
+Continuous Deployment is delivering the code to production,
+CI consists of the Plan, Code, Build, and Test phases,
+CD consists of the Release, Deploy, and Operate phases,
+CI/CD sits in the Build and Test phases of the DevOps pipeline,
+and there are several benefits to CI/CD.
